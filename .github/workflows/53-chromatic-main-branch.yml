@@ -44,6 +44,7 @@ jobs:
           # ⚠️ Make sure to configure a `CHROMATIC_PROJECT_TOKEN` repository secret
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: frontend
+          forceRebuild: true
       - name: Echo output
         run: |
           echo "Chromatic URL: ${{ steps.run_chromatic.outputs.url }}"
@@ -62,6 +63,3 @@ jobs:
             folder: frontend/chromatic_static # source
             clean: true # Automatically remove deleted files from the deploy branch
             target-folder: chromatic # destination 
-       
-     
-   
